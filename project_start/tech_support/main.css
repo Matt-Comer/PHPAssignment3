@@ -6,7 +6,6 @@ html {
     min-height: 100%;
     background-color: #0b1220;
 }
-
 /* Main application container */
 body {
     margin: 24px auto;
@@ -23,7 +22,6 @@ body {
     overflow: hidden;
     overflow: auto;
 }
-
 /* Shared header from view/header.php */
 header {
     margin: 0;
@@ -31,7 +29,6 @@ header {
     background-color: #111c2f;
     border-bottom: 1px solid #354761;
 }
-
 /* SportsPro application title */
 header h1 {
     margin: 0;
@@ -40,7 +37,6 @@ header h1 {
     letter-spacing: -0.5px;
     color: #ffffff;
 }
-
 /* Application subtitle */
 header p {
     margin: 4px 0 0;
@@ -53,7 +49,6 @@ header nav {
     margin: 18px 0 0;
     padding: 0;
 }
-
 /* Main content for all management pages */
 main {
     margin: 0;
@@ -69,7 +64,6 @@ footer {
     border-top: 1px solid #354761;
     clear: both;
 }
-
 /* Copyright and footer information */
 footer p {
     margin: 0;
@@ -78,7 +72,6 @@ footer p {
     color: #b9c8dc;
     text-align: right;
 }
-
 /* Main page headings */
 h1 {
     margin: 0 0 18px;
@@ -86,7 +79,6 @@ h1 {
     font-size: 27px;
     color: #f8fafc;
 }
-
 /* Section headings for management tools */
 h2 {
     margin: 24px 0 18px;
@@ -94,25 +86,21 @@ h2 {
     font-size: 19px;
     color: #93c5fd;
 }
-
 /* Paragraphs and application messages */
 p {
     margin: 12px 0;
     padding: 0;
 }
-
 /* Remove default list spacing */
 ul {
     margin: 0;
     padding: 0;
 }
-
 /* Reset individual list items */
 li {
     margin: 0;
     padding: 0;
 }
-
 /* Navigation lists used in header and homepage */
 nav ul {
     margin: 0;
@@ -122,7 +110,6 @@ nav ul {
     gap: 12px;
     list-style-type: none;
 }
-
 /* Spacing for individual navigation links */
 nav ul li {
     margin: 0;
@@ -138,7 +125,6 @@ a {
     text-decoration: none;
     transition: color 0.2s ease;
 }
-
 /* Highlight links when hovered */
 a:hover {
     color: #ffffff;
@@ -150,7 +136,6 @@ a:focus-visible {
     outline: 2px solid #60a5fa;
     outline-offset: 4px;
 }
-
 /* Product and customer database tables */
 table {
     margin: 20px 0;
@@ -159,7 +144,6 @@ table {
     border: 1px solid #354761;
     border-collapse: collapse;
 }
-
 /* Consistent spacing for database columns */
 td,
 th {
@@ -175,12 +159,10 @@ th {
     background-color: #22334d;
     color: #93c5fd;
 }
-
 /* Customer and product record values */
 td {
     color: #f8fafc;
 }
-
 /* Highlight records when hovered */
 tr:hover td {
     background-color: #20314a;
@@ -190,18 +172,15 @@ tr:hover td {
 #no_border {
     border: 0;
 }
-
 /* Remove borders from legacy table cells */
 #no_border td {
     border: 0;
 }
-
 /* Forms for customers, products, and incidents */
 form {
     margin: 18px 0;
     padding: 0;
 }
-
 /* Labels for form fields */
 label {
     margin: 8px 8px 8px 0;
@@ -211,7 +190,6 @@ label {
     min-width: 125px;
     color: #b9c8dc;
 }
-
 /* Shared styling for input fields and dropdowns */
 input,
 select,
@@ -227,7 +205,6 @@ textarea {
     border-radius: 8px;
     box-sizing: border-box;
 }
-
 /* Highlight the active form field */
 input:focus,
 select:focus,
@@ -236,30 +213,25 @@ textarea:focus {
     outline: 2px solid rgba(96, 165, 250, 0.4);
     outline-offset: 1px;
 }
-
 /* Text fields for names and product information */
 input[type="text"],
 input[type="email"] {
     min-width: 240px;
 }
-
 /* Keep hidden PHP form values invisible */
 input[type="hidden"] {
     display: none;
 }
-
 /* Country and registered-product dropdowns */
 select {
     min-width: 220px;
     cursor: pointer;
 }
-
 /* Maintain readable dropdown options */
 select option {
     background-color: #22334d;
     color: #f8fafc;
 }
-
 /* Multiline description for Create Incident */
 textarea {
     margin: 0;
@@ -271,7 +243,6 @@ textarea {
     vertical-align: top;
     resize: vertical;
 }
-
 /* Action buttons for searching and saving records */
 button,
 input[type="submit"] {
@@ -288,20 +259,17 @@ input[type="submit"] {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
-
 /* Darken buttons when hovered */
 button:hover,
 input[type="submit"]:hover {
     background-color: #1d4ed8;
 }
-
 /* Show keyboard focus on action buttons */
 button:focus-visible,
 input[type="submit"]:focus-visible {
     outline: 2px solid #93c5fd;
     outline-offset: 3px;
 }
-
 /* Identify disabled form controls */
 button:disabled,
 input:disabled,
@@ -309,23 +277,19 @@ select:disabled {
     opacity: 0.55;
     cursor: not-allowed;
 }
-
 /* Clear floated fields in legacy forms */
 br {
     clear: both;
 }
-
 /* Right-align selected table values */
 .right {
     text-align: right;
 }
-
 /* Display validation and database errors */
 .error {
     color: #f87171;
     font-weight: bold;
 }
-
 /* Display successful database operations */
 .message {
     margin: 12px 0;
@@ -333,13 +297,11 @@ br {
     color: #34d399;
     font-weight: bold;
 }
-
 /* Preserve spacing for legacy form messages */
 #aligned {
     margin: 16px 0 32px;
     padding: 0;
 }
-
 /* Align labels beside legacy form inputs */
 #aligned label {
     margin: 8px 16px 8px 0;
@@ -357,20 +319,17 @@ br {
 #aligned input[type="text"] {
     width: 240px;
 }
-
 /* Preserve legacy message positioning */
 #aligned .message {
     margin: 0 0 0 8px;
     padding: 0;
     width: 15em;
 }
-
 /* Remove extra spacing around table forms */
 td form {
     margin: 0;
     padding: 0;
 }
-
 /* Keep table action buttons compact */
 td input[type="submit"] {
     margin: 0;
@@ -378,7 +337,6 @@ td input[type="submit"] {
     font-size: 13px;
     min-width: 85px;
 }
-
 /* Adjust the application for tablet screens */
 @media (max-width: 800px) {
     body {
@@ -386,21 +344,18 @@ td input[type="submit"] {
         padding: 0;
         width: calc(100% - 24px);
     }
-
     /* Reduce container padding on tablets */
     header,
     main,
     footer {
         padding: 24px;
     }
-
     /* Allow wide database tables to scroll */
     table {
         display: block;
         overflow-x: auto;
     }
 }
-
 /* Adjust the application for mobile screens */
 @media (max-width: 600px) {
     body {
@@ -409,29 +364,24 @@ td input[type="submit"] {
         width: calc(100% - 16px);
         border-radius: 10px;
     }
-
     /* Reduce spacing inside mobile containers */
     header,
     main,
     footer {
         padding: 18px;
     }
-
     /* Resize the application title */
     header h1 {
         font-size: 24px;
     }
-
     /* Resize page headings */
     h1 {
         font-size: 23px;
     }
-
     /* Keep navigation links evenly spaced */
     nav ul {
         gap: 10px;
     }
-
     /* Stack labels above their inputs */
     label {
         margin: 8px 0 5px;
@@ -439,7 +389,6 @@ td input[type="submit"] {
         display: block;
         min-width: 0;
     }
-
     /* Expand text fields across mobile screens */
     input[type="text"],
     input[type="email"],
@@ -447,12 +396,10 @@ td input[type="submit"] {
         width: 100%;
         min-width: 0;
     }
-
     /* Expand incident descriptions on mobile */
     textarea {
         width: 100%;
     }
-
     /* Remove floats from legacy forms */
     #aligned label,
     #aligned input {
@@ -460,7 +407,6 @@ td input[type="submit"] {
         display: block;
         width: 100%;
     }
-
     /* Center footer text on mobile */
     footer p {
         text-align: center;

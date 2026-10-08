@@ -2,24 +2,19 @@
 <?php
 // Connect to the SportsPro database.
 require_once('../model/database.php');
-
 // Read the requested action from POST or GET.
 $action = filter_input(INPUT_POST, 'action');
-
 if ($action === null) {
     $action = filter_input(INPUT_GET, 'action');
 }
-
 // Display the customer directory by default.
 if ($action === null || $action === '') {
     $action = 'search_customers';
 }
-
 // Escape database values before displaying them in HTML.
 function escape($value) {
     return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
 }
-
 // Route requests to the correct customer operation.
 switch ($action) {
     case 'search_customers':
@@ -29,7 +24,6 @@ switch ($action) {
             filter_input(INPUT_GET, 'lastName') ??
             ''
         ));
-
         // Display every customer when no last name is entered.
         if ($lastName === '') {
             $statement = $db->query(
@@ -45,16 +39,13 @@ switch ($action) {
                  WHERE lastName LIKE :lastName
                  ORDER BY lastName, firstName'
             );
-
             // Execute the customer search safely.
             $statement->execute([
                 ':lastName' => '%' . $lastName . '%'
             ]);
         }
-
         // Retrieve customer records for the directory.
         $customers = $statement->fetchAll(PDO::FETCH_ASSOC);
-
         // Display the shared application header.
         include('../view/header.php');
         ?>
@@ -62,7 +53,6 @@ switch ($action) {
             <h1>Customer Directory</h1>
 
             <p>Browse customers or search by last name.</p>
-
             <!-- Search customers without requiring a last name. -->
             <form action="index.php" method="get">
                 <input
@@ -70,7 +60,6 @@ switch ($action) {
                     name="action"
                     value="search_customers"
                 >
-
                 <!-- Enter all or part of a customer's last name. -->
                 <label for="lastName">Last Name:</label>
                 <input
@@ -79,11 +68,9 @@ switch ($action) {
                     name="lastName"
                     value="<?= escape($lastName) ?>"
                 >
-
                 <!-- Submit the optional customer search. -->
                 <button type="submit">Search</button>
             </form>
-
             <!-- Display the customer directory or search results. -->
             <h2>
                 <?= $lastName === '' ? 'All Customers' : 'Search Results' ?>
@@ -99,7 +86,6 @@ switch ($action) {
                         <th>City</th>
                         <th>Action</th>
                     </tr>
-
                     <!-- Display each customer returned from MySQL. -->
                     <?php foreach ($customers as $customer) : ?>
                         <tr>
@@ -118,7 +104,6 @@ switch ($action) {
                             <td>
                                 <?= escape($customer['city']) ?>
                             </td>
-
                             <!-- Open the selected customer's record. -->
                             <td>
                                 <a href="index.php?action=view_customer&amp;customerID=<?= (int) $customer['customerID'] ?>">
@@ -132,7 +117,6 @@ switch ($action) {
                 <!-- Display feedback when no customers match. -->
                 <p>No customers found.</p>
             <?php endif; ?>
-
             <!-- Return to the complete customer directory. -->
             <?php if ($lastName !== '') : ?>
                 <p>
@@ -152,14 +136,12 @@ switch ($action) {
             'customerID',
             FILTER_VALIDATE_INT
         );
-
         // Retrieve the selected customer's complete record.
         $statement = $db->prepare(
             'SELECT *
              FROM customers
              WHERE customerID = :customerID'
         );
-
         // Execute the customer lookup.
         $statement->execute([
             ':customerID' => $customerID
@@ -187,14 +169,12 @@ switch ($action) {
         ?>
         <main>
             <h2>View/Update Customer</h2>
-
             <!-- Confirm successful customer updates. -->
             <?php if (isset($_GET['updated'])) : ?>
                 <p class="message">
                     Customer updated successfully.
                 </p>
             <?php endif; ?>
-
             <!-- Submit edited customer information to MySQL. -->
             <form action="index.php" method="post">
                 <input
@@ -202,14 +182,12 @@ switch ($action) {
                     name="action"
                     value="update_customer"
                 >
-
                 <!-- Identify the customer being updated. -->
                 <input
                     type="hidden"
                     name="customerID"
                     value="<?= (int) $customer['customerID'] ?>"
                 >
-
                 <?php
                 // Define the standard editable customer fields.
                 $fields = [
@@ -221,7 +199,6 @@ switch ($action) {
                     'postalCode' => 'Postal Code'
                 ];
                 ?>
-
                 <!-- Display customer fields with saved values. -->
                 <?php foreach ($fields as $field => $label) : ?>
                     <p>
@@ -237,7 +214,6 @@ switch ($action) {
                         >
                     </p>
                 <?php endforeach; ?>
-
                 <!-- Select a country from the countries table. -->
                 <p>
                     <label for="countryCode">Country:</label>
@@ -260,7 +236,6 @@ switch ($action) {
                         <?php endforeach; ?>
                     </select>
                 </p>
-
                 <!-- Display the customer's phone number. -->
                 <p>
                     <label for="phone">Phone:</label>
@@ -271,7 +246,6 @@ switch ($action) {
                         value="<?= escape($customer['phone']) ?>"
                     >
                 </p>
-
                 <!-- Display the customer's email address. -->
                 <p>
                     <label for="email">Email:</label>
@@ -282,7 +256,6 @@ switch ($action) {
                         value="<?= escape($customer['email']) ?>"
                     >
                 </p>
-
                 <!-- Display the customer's existing password field. -->
                 <p>
                     <label for="password">Password:</label>
@@ -293,11 +266,9 @@ switch ($action) {
                         value="<?= escape($customer['password']) ?>"
                     >
                 </p>
-
                 <!-- Save the edited customer information. -->
                 <button type="submit">Update Customer</button>
             </form>
-
             <!-- Return to the complete customer directory. -->
             <p>
                 <a href="index.php">All Customers</a>
@@ -315,31 +286,26 @@ switch ($action) {
             'customerID',
             FILTER_VALIDATE_INT
         );
-
         // Read the selected country code.
         $countryCode = trim((string) (
             filter_input(INPUT_POST, 'countryCode') ?? ''
         ));
-
         // Confirm that the country exists in the database.
         $statement = $db->prepare(
             'SELECT COUNT(*)
              FROM countries
              WHERE countryCode = :countryCode'
         );
-
         // Check the selected country code.
         $statement->execute([
             ':countryCode' => $countryCode
         ]);
-
         // Reject an invalid customer or country.
         if (!$customerID || !$statement->fetchColumn()) {
             $error = 'Invalid customer or country.';
             include('../errors/error.php');
             break;
         }
-
         // Define the customer fields to update.
         $fields = [
             'firstName',
@@ -352,15 +318,12 @@ switch ($action) {
             'email',
             'password'
         ];
-
         // Prepare the submitted customer information.
         $data = [];
-
         // Read each editable field from the form.
         foreach ($fields as $field) {
             $data[$field] = trim((string) ($_POST[$field] ?? ''));
         }
-
         // Update the customer's complete database record.
         $statement = $db->prepare(
             'UPDATE customers
@@ -376,7 +339,6 @@ switch ($action) {
                  password = :password
              WHERE customerID = :customerID'
         );
-
         // Bind customer information to the SQL parameters.
         $statement->execute([
             ':firstName' => $data['firstName'],
@@ -391,7 +353,6 @@ switch ($action) {
             ':password' => $data['password'],
             ':customerID' => $customerID
         ]);
-
         // Return to the updated customer record.
         header(
             'Location: index.php?action=view_customer&customerID=' .

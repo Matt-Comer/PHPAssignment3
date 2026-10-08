@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 08, 2026 at 03:38 AM
+-- Generation Time: Oct 08, 2026 at 04:08 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -444,7 +444,9 @@ INSERT INTO `products` (`productCode`, `name`, `version`, `releaseDate`) VALUES
 ('LEAGD10', 'League Scheduler Deluxe 1.0', 1.0, '2018-09-01 00:00:00'),
 ('SP2026', 'SportsPro Elite', 2.5, '2026-10-07 00:00:00'),
 ('TEAM10', 'Team Manager Version 1.0', 1.0, '2020-06-01 00:00:00'),
-('TEST2026', 'Test Product', 1.0, '2026-10-07 00:00:00');
+('TEST2026', 'Test Product', 1.0, '2026-10-07 00:00:00'),
+('TRNY10', 'Tournament Master Version 1.0', 1.0, '2018-01-01 00:00:00'),
+('TRNY20', 'Tournament Master Version 2.0', 2.0, '2020-03-15 00:00:00');
 
 -- --------------------------------------------------------
 
