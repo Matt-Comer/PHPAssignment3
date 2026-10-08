@@ -1,0 +1,468 @@
+
+/* Background surrounding the SportsPro application */
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #0b1220;
+}
+
+/* Main application container */
+body {
+    margin: 24px auto;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    width: min(1100px, calc(100% - 32px));
+    min-height: 90vh;
+    background-color: #172338;
+    color: #f8fafc;
+    border: 1px solid #354761;
+    border-radius: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow: auto;
+}
+
+/* Shared header from view/header.php */
+header {
+    margin: 0;
+    padding: 28px 36px;
+    background-color: #111c2f;
+    border-bottom: 1px solid #354761;
+}
+
+/* SportsPro application title */
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+/* Application subtitle */
+header p {
+    margin: 4px 0 0;
+    padding: 0;
+    color: #b9c8dc;
+}
+
+/* Navigation beneath the application title */
+header nav {
+    margin: 18px 0 0;
+    padding: 0;
+}
+
+/* Main content for all management pages */
+main {
+    margin: 0;
+    padding: 32px 36px;
+    min-height: 350px;
+}
+
+/* Shared footer from view/footer.php */
+footer {
+    margin: 0;
+    padding: 18px 36px;
+    background-color: #111c2f;
+    border-top: 1px solid #354761;
+    clear: both;
+}
+
+/* Copyright and footer information */
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #b9c8dc;
+    text-align: right;
+}
+
+/* Main page headings */
+h1 {
+    margin: 0 0 18px;
+    padding: 0;
+    font-size: 27px;
+    color: #f8fafc;
+}
+
+/* Section headings for management tools */
+h2 {
+    margin: 24px 0 18px;
+    padding: 0;
+    font-size: 19px;
+    color: #93c5fd;
+}
+
+/* Paragraphs and application messages */
+p {
+    margin: 12px 0;
+    padding: 0;
+}
+
+/* Remove default list spacing */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset individual list items */
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation lists used in header and homepage */
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style-type: none;
+}
+
+/* Spacing for individual navigation links */
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Links throughout the SportsPro application */
+a {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Highlight links when hovered */
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Highlight links during keyboard navigation */
+a:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 4px;
+}
+
+/* Product and customer database tables */
+table {
+    margin: 20px 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid #354761;
+    border-collapse: collapse;
+}
+
+/* Consistent spacing for database columns */
+td,
+th {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid #354761;
+}
+
+/* Table headings for database fields */
+th {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #22334d;
+    color: #93c5fd;
+}
+
+/* Customer and product record values */
+td {
+    color: #f8fafc;
+}
+
+/* Highlight records when hovered */
+tr:hover td {
+    background-color: #20314a;
+}
+
+/* Preserve borderless tables from the starter project */
+#no_border {
+    border: 0;
+}
+
+/* Remove borders from legacy table cells */
+#no_border td {
+    border: 0;
+}
+
+/* Forms for customers, products, and incidents */
+form {
+    margin: 18px 0;
+    padding: 0;
+}
+
+/* Labels for form fields */
+label {
+    margin: 8px 8px 8px 0;
+    padding: 0;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 125px;
+    color: #b9c8dc;
+}
+
+/* Shared styling for input fields and dropdowns */
+input,
+select,
+textarea {
+    margin: 0;
+    padding: 11px 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    max-width: 100%;
+    background-color: #22334d;
+    color: #f8fafc;
+    border: 1px solid #354761;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Highlight the active form field */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #60a5fa;
+    outline: 2px solid rgba(96, 165, 250, 0.4);
+    outline-offset: 1px;
+}
+
+/* Text fields for names and product information */
+input[type="text"],
+input[type="email"] {
+    min-width: 240px;
+}
+
+/* Keep hidden PHP form values invisible */
+input[type="hidden"] {
+    display: none;
+}
+
+/* Country and registered-product dropdowns */
+select {
+    min-width: 220px;
+    cursor: pointer;
+}
+
+/* Maintain readable dropdown options */
+select option {
+    background-color: #22334d;
+    color: #f8fafc;
+}
+
+/* Multiline description for Create Incident */
+textarea {
+    margin: 0;
+    padding: 11px 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: min(500px, 100%);
+    min-height: 120px;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/* Action buttons for searching and saving records */
+button,
+input[type="submit"] {
+    margin: 8px 0;
+    padding: 11px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    min-width: 130px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Darken buttons when hovered */
+button:hover,
+input[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+/* Show keyboard focus on action buttons */
+button:focus-visible,
+input[type="submit"]:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* Identify disabled form controls */
+button:disabled,
+input:disabled,
+select:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Clear floated fields in legacy forms */
+br {
+    clear: both;
+}
+
+/* Right-align selected table values */
+.right {
+    text-align: right;
+}
+
+/* Display validation and database errors */
+.error {
+    color: #f87171;
+    font-weight: bold;
+}
+
+/* Display successful database operations */
+.message {
+    margin: 12px 0;
+    padding: 0;
+    color: #34d399;
+    font-weight: bold;
+}
+
+/* Preserve spacing for legacy form messages */
+#aligned {
+    margin: 16px 0 32px;
+    padding: 0;
+}
+
+/* Align labels beside legacy form inputs */
+#aligned label {
+    margin: 8px 16px 8px 0;
+    padding: 0;
+    width: 130px;
+    float: left;
+}
+
+/* Position legacy inputs beside labels */
+#aligned input {
+    float: left;
+}
+
+/* Keep text fields aligned in legacy forms */
+#aligned input[type="text"] {
+    width: 240px;
+}
+
+/* Preserve legacy message positioning */
+#aligned .message {
+    margin: 0 0 0 8px;
+    padding: 0;
+    width: 15em;
+}
+
+/* Remove extra spacing around table forms */
+td form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Keep table action buttons compact */
+td input[type="submit"] {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+    min-width: 85px;
+}
+
+/* Adjust the application for tablet screens */
+@media (max-width: 800px) {
+    body {
+        margin: 12px auto;
+        padding: 0;
+        width: calc(100% - 24px);
+    }
+
+    /* Reduce container padding on tablets */
+    header,
+    main,
+    footer {
+        padding: 24px;
+    }
+
+    /* Allow wide database tables to scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Adjust the application for mobile screens */
+@media (max-width: 600px) {
+    body {
+        margin: 8px auto;
+        padding: 0;
+        width: calc(100% - 16px);
+        border-radius: 10px;
+    }
+
+    /* Reduce spacing inside mobile containers */
+    header,
+    main,
+    footer {
+        padding: 18px;
+    }
+
+    /* Resize the application title */
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Resize page headings */
+    h1 {
+        font-size: 23px;
+    }
+
+    /* Keep navigation links evenly spaced */
+    nav ul {
+        gap: 10px;
+    }
+
+    /* Stack labels above their inputs */
+    label {
+        margin: 8px 0 5px;
+        padding: 0;
+        display: block;
+        min-width: 0;
+    }
+
+    /* Expand text fields across mobile screens */
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Expand incident descriptions on mobile */
+    textarea {
+        width: 100%;
+    }
+
+    /* Remove floats from legacy forms */
+    #aligned label,
+    #aligned input {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+
+    /* Center footer text on mobile */
+    footer p {
+        text-align: center;
+    }
+}
